@@ -15,10 +15,10 @@ class Container extends React.Component {
   };
 
   setDate = (dateObject) => {
-    console.log('dateObject', dateObject.toS);
+    const dateString = moment(dateObject).format('MM-DD-YYYY');
     this.props.history.push({
       pathname: '/',
-      search: `?date=${dateObject.toString()}`
+      search: `?date=${dateString}`
     });
     this.setState({ dateObject });
   };
